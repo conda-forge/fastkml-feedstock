@@ -1,18 +1,18 @@
 {% set name = "fastkml" %}
-{% set version = "0.11" %}
+{% set version = "0.12" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 86d0ee3b108a5508ab5b9ef1b7063fa6afd0115849bbb3f2d6c1e06cda5de279
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 34d8eb2f77b554002743bb8be5678f89d8ecea5a64ded1480028f43405d8b638
 
 build:
   noarch: python
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -29,12 +29,12 @@ test:
     - fastkml
 
 about:
-  home: "https://github.com/cleder/fastkml"
-  license: "LGPL-2.1"
-  license_family: "LGPL"
-  license_file: "LICENSE.txt"
-  summary: "Fast KML processing in python"
-  doc_url: "https://pypi.org/project/fastkml/"
+  home: https://github.com/cleder/fastkml
+  license: LGPL-2.1
+  license_family: LGPL
+  license_file: LICENSE.txt
+  summary: Fast KML processing in python
+  doc_url: https://pypi.org/project/fastkml/
 
 extra:
   recipe-maintainers:
