@@ -1,44 +1,45 @@
 {% set name = "fastkml" %}
-{% set version = "0.11" %}
+{% set version = "0.12" %}
+
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 86d0ee3b108a5508ab5b9ef1b7063fa6afd0115849bbb3f2d6c1e06cda5de279
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fastkml-{{ version }}.tar.gz
+  sha256: 34d8eb2f77b554002743bb8be5678f89d8ecea5a64ded1480028f43405d8b638
 
 build:
+  number: 0
   noarch: python
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - pytest
+    - python >=3.6
   run:
-    - pygeoif
-    - python
+    - pygeoif <1.0
+    - python >=3.6
     - python-dateutil
-    - setuptools
 
 test:
   imports:
     - fastkml
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: "https://github.com/cleder/fastkml"
-  license: "LGPL-2.1"
-  license_family: "LGPL"
-  license_file: "LICENSE.txt"
+  license: LGPL-2.1-only
+  license_file: LICENSE.txt
   summary: "Fast KML processing in python"
   doc_url: "https://pypi.org/project/fastkml/"
 
 extra:
   recipe-maintainers:
     - mxr-conda
-    - dcunn
-    - rluria14
-    - oblute
