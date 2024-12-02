@@ -1,5 +1,5 @@
 {% set name = "fastkml" %}
-{% set version = "0.12" %}
+{% set version = "1.1.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fastkml-{{ version }}.tar.gz
-  sha256: 34d8eb2f77b554002743bb8be5678f89d8ecea5a64ded1480028f43405d8b638
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fastkml-{{ version }}.tar.gz
+  sha256: a786a80733763c16f5505efd7160a526f43b093bde767c9b35e816459bc6074e
 
 build:
   number: 0
