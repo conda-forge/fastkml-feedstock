@@ -19,11 +19,12 @@ requirements:
   host:
     - pip
     - pytest
+    - setuptools
     - python {{ python_min }}
   run:
     - arrow
     - pygeoif >=1.5
-    - python >= {{ python_min }}
+    - python >={{ python_min }}
 
 test:
   imports:
