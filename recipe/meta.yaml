@@ -22,6 +22,7 @@ requirements:
   run:
     - arrow
     - pygeoif >=1.5
+    - typing-extensions >4
     - python >={{ python_min }}
 
 test:
